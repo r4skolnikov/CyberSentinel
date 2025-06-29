@@ -2,6 +2,7 @@
 'use client';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import Image from 'next/image'; // <-- Import the Image component
 
 export default function LoginPage() {
   const router = useRouter();
@@ -66,7 +67,14 @@ export default function LoginPage() {
   return (
     <main className="flex flex-col items-center justify-center h-screen bg-gray-100">
       <div className="absolute top-0 left-0 p-8">
-        <img src="/logo-mallplaza.png" alt="mallplaza" className="h-10" />
+        {/* Reemplazado <img> con <Image /> */}
+        <Image
+          src="/logo-mallplaza.png"
+          alt="mallplaza"
+          width={150} // Adjust width as needed for your logo (e.g., 150px)
+          height={40}  // Adjust height to maintain aspect ratio (e.g., 40px)
+          className="h-10" // Keep your existing Tailwind class for responsive height if needed
+        />
       </div>
       <form
         onSubmit={handleSubmit}
